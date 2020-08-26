@@ -38,8 +38,7 @@ This project contains the webpages I created with my concept about GrandChase, l
 
 ## References
 
-	[Bootstrap 4.3.1 dist](https://github.com/twbs/bootstrap)
-	[jQuery 3.5.1](https://github.com/jquery/jquery)
+*[Bootstrap 4.3.1 dist](https://github.com/twbs/bootstrap) & [jQuery 3.5.1](https://github.com/jquery/jquery)*
 
 ## Contributor notes
 
