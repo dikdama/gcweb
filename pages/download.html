@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta charset="utf-8"/>
-    	<meta name="author" content="dikdama"/>
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    	<title>Download</title>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content="dikdama"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Download</title>
         <link rel="icon" type="image/ico" href="../media assets site/Icon.ico" />
         <link rel="stylesheet" href="../lib/bootstrap.min.css">
-		<link rel="stylesheet" href="../stylesheet/mycssgc.css"/>
-	</head>
-	<body> 
-		  <center>
-      <header>
+        <link rel="stylesheet" href="../stylesheet/mycssgc.css"/>
+    </head>
+        <center>
+        <header>
         <img src="../media assets site/anigif.gif"  width="1201" height="323" alt="headermain"/> 
         <div class="base">
           <img src="../media assets site/nav-base.png" width="1201" height="286" alt="base"/>
         </div>
         <div class="logobotao">
-                <a href="../index.htm">
+                <a href="../index.html">
                         <img src="../media assets site/navmain.png" width="527" height="254" alt="logogc" />
                     </a>
                 </div>
             </header>
-			<section>
-       				<div class="down-main">
-                   	<img src="../media assets site/reqdownload.png" width="1000" height="445" alt="requisitos"> 
-                   	</div>
-                	<div class="botoes-bot">
-                 		<a href=""> 
-            <img src="../media assets site/dowdirect.png" width="299" height="136" alt="downloaddireto" align="left"> 						</a>
-            			<a href="">
-        <img src="../media assets site/downtorrent.png" width="298" height="128" alt="downloadtorrent" align="right">            			</a>
+            <section>
+         <div class="down-main">
+                    <img src="../media assets site/reqdownload.png" width="1000" height="445" alt="requisitos"> 
+                    </div>
+                    <div class="botoes-bot">
+                        <a href="#downModal" data-toggle="modal"> 
+    <img src="../media assets site/dowdirect.png" width="299" height="136" alt="downloaddireto" align="left">                       </a>
+                        <a href="">
+    <img src="../media assets site/downtorrent.png" width="298" height="128" alt="downloadtorrent" align="right">                       </a>
                     </div>
             <div class="final">           
                    <dl align="left">
@@ -41,12 +40,43 @@
                         <dd style="margin-left: 50px">Necessário pacotes do Directx 7.0 superior.</dd>
                     </dl>
             </div>
-            		</center>
+         
             </section>
             </center>
-			<footer>
+             <!-- Modal -->
+<div class="modal fade" id="downModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="ModalLabel" align="left">Downloads</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> &times;
+                        </button>
+                        </div>
+                         <div class="modal-body">
+                                Escolha o melhor FTP para seu download!
+                                <div class="contstaff" style="margin-top: 15px"><center>
+                                    <a href="" target="_blank"><h6><img src="../media assets site/gdrive.png"/>GCChaos - GoogleDrive</h6></a>
+                                    <a href="" target="_blank"><h6><img src="../media assets site/mfire.png"/>GCChaos - MediaFire</h6></a>
+                                     </center>
+                                    <h4>Librarys</h4>
+                                    <h6><img src="../media assets site/directx.png"/><a href="https://www.microsoft.com/pt-br/download/details.aspx?id=35" target="_blank">Directx Installer</a><h6>
+                                    <h6>
+                                    <a href="https://www.microsoft.com/pt-br/download/details.aspx?id=21" target="_blank"><img src="../media assets site/netframe.png"/>.Net Framework Client</a></h6>
+                                </div>
+                           </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                        </div>
+                      </div><!-- fecha modal-content  -->
+                    </div>  <!-- fecha modal-dialog -->
+                 </div><!-- fecha modal fade -->
+            <footer>
                 <center>
-                	<img src="../media assets site/footer.png" width="1201" height="623" alt="rodape" /></center>
+                    <img src="../media assets site/footer.png" width="1201" height="623" alt="rodape" /></center>
             </footer>
-	</body>
+            <script type="text/javascript" src="../lib/jquery-3.5.1.min.js">
+                </script>
+             <script type="text/javascript" src="../lib/bootstrap.min.js">
+             </script>
+    </body>
 </html>
