@@ -1,3 +1,15 @@
+<?php
+session_start();
+require 'script/conexao.php';
+$consulta= "SELECT Connecting FROM users";
+$userson= mysqli_query($conn,$consulta);
+$chasers = 0;
+while ($row = $userson->fetch_assoc()) { 
+    if($row['Connecting']){
+        $chasers++;
+    }  
+}
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -11,19 +23,16 @@
 	</head>
         <center>
         <header>
-        <img src="media assets site/anigif.gif"  width="1201" height="323" alt="headermain"/> 
+        <img src="media assets site/anigif.gif"  width="1200" height="323" alt="headermain"/> 
         <div class="base">
-          <img src="media assets site/nav-base.png" width="1201" height="286" alt="base"/>
+            <a href="index.php">
+            <img src="media assets site/nav-base.png" width="1200" height="286" alt="base"/>
+           </a>
         </div>
-        <div class="logobotao">
-                <a href="index.html">
-                        <img src="media assets site/navmain.png" width="527" height="254" alt="logogc" />
-                    </a>
-                </div>
             </header>
             <section>
          <div class="navcustom">
-         <a href="pages/account.html">
+         <a href="pages/account.php">
          <img id="acc" src="media assets site/button-criaracc.png" align="left" width="334" height="180" alt="Criar Conta" />
          </a>
          <a href="#Modal" data-toggle="modal">
@@ -56,6 +65,12 @@
         <a class="carousel-control-next" href="#myCarousel" data-slide="next">&rsaquo;</a>
          </div>
             </section>
+            <div class="escrita">
+            	"Esse site faz parte de um projeto do servidor de teste para estudo do jogo chamado Grand Chase, atualmente se encontra na Season 5 oficial. Desenvolvido e administrado de fã para fã by dikdama, e para diversão completa, todos os mapas estão habilitados e eventos também, então venha fazer parte dessa Grande Caçada!"
+            </div>
+             <div class="server">
+            Caçadores em missões <br> <?php echo $chasers; ?>
+           </div>
             </center>
              <!-- Modal -->
 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -68,14 +83,12 @@
                         </div>
                          <div class="modal-body" align="center">
                            Olá amigo, é com muito prazer que a staff lhe dá as boas vindas.<br>
-                           Composta por numerosos 1 componente XD, deixo aqui os meios <br>do meu contato
-                           para o desenvolvimento/contribuição desse projeto ;D.
+                           Composta por numerosos 1 componente XD, deixo aqui o repositório
+                            para o desenvolvimento/contribuição desse projeto ;D.<br>
+                           "Não vou desistir dessa grande caçada." by dikdama
                                 <div class="contstaff" style="margin-top: 15px"><center>
                                     <h6>#LongLiveTheChase</h6>
                                     <a href="https://github.com/dikdama/gcweb" target="_blank"><h6>repository/grand_chase_project</h6></a>
-                                    <a href="https://twitter.com/vi_Throl" target="_blank"><h6>@vi_Throl</h6></a>
-                                    <a href="mailto:"><h6>dikdama@hotmail.com</h6></a>
-                                    <h6>2020</h6>
                                     </center>
                                 </div>
                            </div>

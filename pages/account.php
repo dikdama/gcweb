@@ -1,3 +1,7 @@
+<?php
+session_start();
+require '../script/conexao.php';
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -11,47 +15,51 @@
 	</head>
 	<body><center>
 		<header>
-        <img src="../media assets site/anigif.gif"  width="1201" height="323" alt="headermain"/> 
+        <img src="../media assets site/anigif.gif"  width="1200" height="323" alt="headermain"/> 
         <div class="base">
-          <img src="../media assets site/nav-base.png" width="1201" height="286" alt="base"/>
+          <a href="../index.php">
+          <img src="../media assets site/nav-base.png" width="1200" height="286" alt="base"/>
+           </a>
         </div>
-        <div class="logobotao">
-                <a href="../index.html">
-                        <img src="../media assets site/navmain.png" width="527" height="254" alt="logogc" />
-                    </a>
-                </div>
             </header>
+            <?php
+				if(isset($_SESSION['msg'])){
+					echo $_SESSION['msg'];
+					unset($_SESSION['msg']);
+				}
+            ?>
               <div class="forms">
-			         <form method="post" action="" role="form">
+			         <form action="../script/criarconta.php" method="post" role="form">
             	  <div class="form-group" align="left">
                 <label id="label-form" for="user">User</label>
-                <input type="text" maxlength="16" name="user" id="user" class="form-control" placeholder="Digite seu apelido" required>
-                </div>
-                <div class="form-group" align="left">
-                <label id="label-form" for="nome">Nome</label>
-                <input type="text" maxlength="50" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" required>
-                </div>
-                <div class="form-group" align="left">
-                <label id="label-form" for="email">Email</label>
-                <input type="email" maxlength="50" name="email" id="email" class="form-control" placeholder="Digite seu Email" required>
+                <input type="text" maxlength="12" name="user" id="user" class="form-control" placeholder="Digite seu apelido">
                 </div>
                 <div class="form-group" align="left">
                 <label id="label-form" for="senha">Senha</label>
-                <input type="password" maxlength="16" name="senha" id="senha" class="form-control" placeholder="Digite sua senha" required>
+                <input type="password" maxlength="16" name="senha" id="senha" class="form-control" placeholder="Digite sua senha">
                 </div>
                 <div class="form-group" align="left">
-                <label id="label-form" for="data">Data de Nascimento</label>
-                <input type="date" name="data" id="nascimento" class="form-control" required min="2002/01/01" required>
+                <label id="label-form" for="sexo">Gênero</label>
+                <select class="form-control" name="sexo" id="sexo">
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                    </select>
                 </div>
                 <div class="form-group" align="center">
 					<label id="label-form">
-						<input type="checkbox" id="aceito"> Eu aceito os termos de ingresso do <a href="#myModal" data-toggle="modal">acordo</a>.</label>
+						<input type="checkbox" name="aceito" id="aceito" required> Eu aceito os termos de ingresso do <a href="#myModal" data-toggle="modal">acordo</a>.</label>
 				</div>
                 <div class="form-group" align="center">
-                	<button type="button" class="btn btn-primary" id="criar">Criar conta</button>
+                	<button type="submit" class="btn btn-primary" id="criar" name="criar">Criar conta</button>
                 </div>
-            </form>
-         
+              </form>
+            </div>
+             <div class="reqs" align="left">
+                <ul>
+                <li>O usuário deve conter no mínimo 4 caracteres, e deve ser diferente de todos os salvos no banco de dados;</li>
+                <li>A senha deve contem no mínimo 8 caracteres, e deve conter no minimo 1 caracter especial;</li>
+                <li>Para que sua conta seja aprovada, você deve aceitar os termos de uso.</li>
+                </ul>
             </div>
         	<!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -73,7 +81,7 @@
                       </div><!-- fecha modal-content  -->
                  	</div>  <!-- fecha modal-dialog -->
                  </div><!-- fecha modal fade -->
-			    </center>
+			  </center>
        <footer>
                 <center>
                 <img src="../media assets site/footer.png" width="1201" height="623" alt="rodape" /></center>
