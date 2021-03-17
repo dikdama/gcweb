@@ -1,13 +1,10 @@
 <?php
 session_start();
 require 'script/conexao.php';
-$consulta= "SELECT Connecting FROM users";
-$userson= mysqli_query($conn,$consulta);
-$chasers = 0;
-while ($row = $userson->fetch_assoc()) { 
-    if($row['Connecting']){
-        $chasers++;
-    }  
+$sql = "SELECT COUNT (Connecting) conect FROM users WHERE Connecting=1";
+$result = odbc_exec($connection , $sql);
+    while(odbc_fetch_row($result)){
+    $mostrauser= odbc_result($result,'conect');
 }
 ?>
 <!DOCTYPE html>
@@ -69,7 +66,7 @@ while ($row = $userson->fetch_assoc()) {
             	"Esse site faz parte de um projeto do servidor de teste para estudo do jogo chamado Grand Chase, atualmente se encontra na Season 5 oficial. Desenvolvido e administrado de fã para fã by dikdama, e para diversão completa, todos os mapas estão habilitados e eventos também, então venha fazer parte dessa Grande Caçada!"
             </div>
              <div class="server">
-            Caçadores em missões <br> <?php echo $chasers; ?>
+            Caçadores em missões <br> <?php echo $mostrauser; ?>
            </div>
             </center>
              <!-- Modal -->

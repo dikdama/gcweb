@@ -10,9 +10,9 @@ require 'conexao.php';
     $flagaceito=false;
     $text="";
     //check user
-    $checkuser = "SELECT username FROM users WHERE username = '$inuser'";
-    $resultuser = mysqli_query($conn,$checkuser);
-    $rowuser= mysqli_num_rows($resultuser);
+    $checkuser = "SELECT Login FROM users WHERE Login = '$inuser'";
+    $resultuser = odbc_exec($connection,$checkuser);
+    $rowuser= odbc_fetch_row($resultuser);
     if(!$inuser=="" and !strlen($inuser)<2 and !strpbrk($inuser,'[]')){
         if($rowuser){
             $text.="Usuário ja existe, ";
@@ -54,7 +54,7 @@ require 'conexao.php';
     //ready
     if($flaguser==true and $flagsenha==true and $flagaceito==true){
 		$insertdado = "INSERT INTO users (Login,passwd,sex) VALUES ('$insertuser','$insertsenha','$insertsexo')";
-    	$resultuser = mysqli_query($conn,$insertdado);
+    	$resultuser = odbc_exec($connection,$insertdado);
     	$_SESSION['msg'] = "<div class='alert alert-success' id='alerts'>Eba!Conta Criada!</div>";
     	header("Location: ../pages/account.php");
     }

@@ -23,10 +23,10 @@ require '../script/conexao.php';
         </div>
             </header>
             <?php
-				if(isset($_SESSION['msg'])){
-					echo $_SESSION['msg'];
-					unset($_SESSION['msg']);
-				}
+				    if(isset($_SESSION['msg'])){
+					   echo $_SESSION['msg'];
+					   unset($_SESSION['msg']);
+				    }
             ?>
               <div class="forms">
 			         <form action="../script/criarconta.php" method="post" role="form">
@@ -57,7 +57,7 @@ require '../script/conexao.php';
              <div class="reqs" align="left">
                 <ul>
                 <li>O usuário deve conter no mínimo 4 caracteres, e deve ser diferente de todos os salvos no banco de dados;</li>
-                <li>A senha deve contem no mínimo 8 caracteres, e deve conter no minimo 1 caracter especial;</li>
+                <li>A senha deve contem no mínimo 8 caracteres, e deve conter no mínimo 1 caractere especial;</li>
                 <li>Para que sua conta seja aprovada, você deve aceitar os termos de uso.</li>
                 </ul>
             </div>

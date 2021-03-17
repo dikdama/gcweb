@@ -1,8 +1,9 @@
 <?php
 // Dados do banco
-$dbhost = "127.0.0.1"; 
-$db = "gc";
-$user ="root"; 
-$password = ""; 
-$conn = mysqli_connect($dbhost, $user, $password, $db);
+$connection_string = 'DRIVER={SQL Server};SERVER=MY-PC;DATABASE=gc';
+
+$user = 'admim';
+$pass = 'admin';
+
+$connection = odbc_connect( $connection_string, $user, $pass ) or die('erro');
 ?>
